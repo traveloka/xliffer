@@ -18,6 +18,12 @@ module XLIFFer
       @xml.to_xml
     end
 
+    def save!(absolutePath)
+      fail ArgumentError, 'Expects a valid destination path to save to' if absolutePath.to_s.empty?
+      
+      File.open(absolutePath, 'w') { |f| f.write @xml.to_xml }
+    end
+
     private
 
     def parse(text)
