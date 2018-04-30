@@ -36,6 +36,11 @@ module XLIFFer
         @xml['target-language'] = val
       end
 
+      def original=(val)
+        @original = val
+        @xml['original'] = val
+      end
+
       private
 
       def file?(xml)
